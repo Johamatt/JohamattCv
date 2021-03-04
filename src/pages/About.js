@@ -181,7 +181,7 @@ export default function About() {
                   </Grid>
 
                   <p>
-                    A inquisitive, quick and continuous learner who is proficient 
+                    Quick and continuous learner who is proficient 
                     to plan and execute a variety of technology in the 
                     Web Application Development. Coding enthusiast since 2017, 
                     currently a full-time information technology student.
