@@ -143,7 +143,7 @@ export default function About() {
                     <Grid item xs={12} className={classes.education}>
                       <Grid item xs={12}>
                         <Chip size="small" label="2020 - " disabled />
-                        <h3>Haaga-Helia Ammattikorkeakoulu</h3>
+                        <h3>Haaga-Helia ammattikorkeakoulu</h3>
                         <p>
                           Bachelor's Degree in Business Information Technology
                         </p>
