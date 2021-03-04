@@ -46,7 +46,7 @@ const useStyles = makeStyles((theme) => ({
 
     "&:after": {
       background: "#111",
-      content: "'what i provide'",
+      content: "'what I provide'",
       position: "absolute",
       bottom: "-8px",
       left: "50%",
@@ -183,7 +183,6 @@ export default function Skills() {
                   <ul style={{listStyleType: 'none', paddingInlineStart: '0px'}}>
                     <li>Finnish (Native)</li>
                     <li>English (Advanced)</li>
-                    <li>Swedish (Basics)</li>
                   </ul>
                   <div className={classes.dividerEllipse} />
                 </Grid>

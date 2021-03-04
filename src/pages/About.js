@@ -33,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
     textDecoration: "none",
     "&:after": {
       background: "#fff",
-      content: "'who i am'",
+      content: "'who I am'",
       position: "absolute",
       bottom: "-8px",
       left: "50%",
@@ -143,7 +143,7 @@ export default function About() {
                     <Grid item xs={12} className={classes.education}>
                       <Grid item xs={12}>
                         <Chip size="small" label="2020 - " disabled />
-                        <h3>Haaga-helia Ammattikorkeakoulu</h3>
+                        <h3>Haaga-Helia Ammattikorkeakoulu</h3>
                         <p>
                           Bachelor's Degree in Business Information Technology
                         </p>
@@ -181,7 +181,7 @@ export default function About() {
                   </Grid>
 
                   <p>
-                    A inquisitive, quick and contiuous learner who is proficient 
+                    A inquisitive, quick and continuous learner who is proficient 
                     to plan and execute a variety of technology in the 
                     Web Application Development. Coding enthusiast since 2017, 
                     currently a full-time information technology student.

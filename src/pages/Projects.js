@@ -14,7 +14,6 @@ import data from '../static/content/data';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    height: "900px",
     flexGrow: 1,
     padding: "100px 0",
     marginBottom: "100px",

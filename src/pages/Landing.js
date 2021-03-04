@@ -38,6 +38,7 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("sm")]: {
       flexDirection: "column",
       marginTop: '5rem',
+      width: '100%'
 
     },
   },
@@ -176,12 +177,12 @@ export default function Header() {
             {...(checked ? { timeout: 2000 } : {})}
             collapsedHeight={50}
           >
-            <Grid container spacing={4} className={classes.topGrid}>
+            <Grid container spacing={4} className={classes.topGrid} >
               {/* LEFT COL */}
               <Grid item xs={6} className={classes.leftCol}>
                 <Grid>
                   <h2 className={classes.h2}>
-                    Welcome to my portfolio, <br /> i'm{" "}
+                    Welcome to my portfolio, <br /> I'm{" "}
                     <Typical
                       className={classes.typical}
                       steps={["Coder", 1000, "Student", 1000]}
