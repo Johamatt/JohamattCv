@@ -11,19 +11,17 @@ import { Fade } from "@material-ui/core";
 const useStyles = makeStyles((theme) => ({
   root: {
     backgroundColor: "#111",
-    "& p, a, h1, h2, h3, h4, h5, ,li,span": {
+    "& p, a, h1, h2, h4, h5, ,li,span": {
       color: "white",
+    },
+    "& h3": {
+      color: "white",
+      margin: "0",
+      marginBottom: "30px",
     },
 
     flexGrow: 1,
     padding: "100px 0",
-  },
-
-  iconset: {
-    "& > *": {
-      margin: theme.spacing(0.5),
-      display: 'inlineBlock'
-    },
   },
 
   divider: {
@@ -75,14 +73,15 @@ const useStyles = makeStyles((theme) => ({
     },
   },
 
-  rightcol: {
+  languagecol: {
+
     [theme.breakpoints.down("xs")]: {
       maxWidth: "100%",
       padding: "30px 10px",
     },
   },
 
-  leftcol: {
+  knowledgecol: {
     [theme.breakpoints.down("xs")]: {
       maxWidth: "100%",
       padding: "30px 10px",
@@ -100,12 +99,23 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "2rem",
     color: "red",
   },
+
+  skillcontentColumn: {
+    minHeight: "170px",
+  },
+
+  iconset: {
+    "& > *": {
+      margin: theme.spacing(0.5),
+      display: "inlineBlock",
+    },
+  },
 }));
 
 const chips = data.chip.map((chip) => (
   <Chip
     key={chip.id}
-    style={{ backgroundColor: `${chip.color}`}}
+    style={{ backgroundColor: `${chip.color}`,width: '6rem' }}
     label={chip.label}
     color="primary"
     size="medium"
@@ -128,65 +138,81 @@ export default function Skills() {
             <Fade in={checked} {...(checked ? { timeout: 1000 } : {})}>
               <Grid item xs={12} className={classes.wrapper}>
                 {/* LEFT COLUMN*/}
-                <Grid item xs={4} className={classes.leftcol} style={{textAlign: 'center'}}>
-                <Grid item xs={12} >
-                  <FaList className={classes.icon}></FaList>
-                    <h3>
-                       Knowledge
-                    </h3>
+                <Grid
+                  item
+                  xs={4}
+                  className={classes.knowledgecol}
+                  style={{ textAlign: "center" }}
+                >
+                  <Grid item xs={12}>
+                    <FaList className={classes.icon}></FaList>
+                    <h3>Knowledge</h3>
                   </Grid>
-                    <Grid item xs={12} className={classes.iconset}>
-                      <ul style={{listStyleType: 'none', paddingInlineStart: '0px'}}>
-                        <li>Full stack Developing </li>
-                        <li>Basics of version control</li>
-                        <li>Basics of Relational Database Design (RDD)</li>
-                        <li>Object-oriented programming (OOP)</li>
-                        <li>Microsoft Office basics</li>
-                        <li>UX design </li>
-                      </ul>
-                      <div style={{ paddingTop: "1rem" }} />
-                      <div className={classes.dividerEllipse} />
-                    </Grid>
+                  <Grid item xs={12} className={classes.skillcontentColumn}>
+                    <ul
+                      style={{
+                        listStyleType: "none",
+                        paddingInlineStart: "0px",
+                      }}
+                    >
+                      <li>Full stack Developing </li>
+                      <li>Basics of version control</li>
+                      <li>Basics of Relational Database Design (RDD)</li>
+                      <li>Object-oriented programming (OOP)</li>
+                      <li>Microsoft Office basics</li>
+                      <li>UX design </li>
+                    </ul>
+                    
+                  </Grid>
+                  <div className={classes.dividerEllipse} />
                 </Grid>
 
-                <Grid item xs={4} style={{maxWidth: '100%',textAlign: 'center'}}>
-                <Grid item xs={12} style={{}}>
-                <FaCode className={classes.icon} ></FaCode>
-                <h3>
-                       Coding
-                    </h3>
-                </Grid> 
-                    
+                <Grid
+                  item
+                  xs={4}
+                  style={{ maxWidth: "100%", textAlign: "center" }}
+                >
+                  <Grid item xs={12} style={{}}>
+                    <FaCode className={classes.icon}></FaCode>
+                    <h3>Coding</h3>
+                  </Grid>
 
+                  <Grid item xs={12} className={classes.skillcontentColumn}>
                     <Grid item xs={12} className={classes.iconset}>
                       {chips}
 
-                      <div style={{ paddingTop: "1rem" }} />
-                  <div className={classes.dividerEllipse} />
-
-               
-                  
+                      
+                    </Grid>
                   </Grid>
-
+                  <div className={classes.dividerEllipse} />
                 </Grid>
 
                 {/* RIGHT COLUMN*/}
-                <Grid item xs={4} className={classes.rightcol} style={{textAlign:'center'}}>
-                  <Grid item xs={12} style={{textAlign:'center'}}>
-                  <FaFlag className={classes.icon}></FaFlag>
-                    <h3>
-                       Languages
-                    </h3>
-                    
+                <Grid
+                  item
+                  xs={4}
+                  className={classes.languagecol}
+                  style={{ textAlign: "center" }}
+                >
+                  <Grid item xs={12} style={{ textAlign: "center" }}>
+                    <FaFlag className={classes.icon}></FaFlag>
+                    <h3>Languages</h3>
                   </Grid>
 
-                  <ul style={{listStyleType: 'none', paddingInlineStart: '0px'}}>
-                    <li>Finnish (Native)</li>
-                    <li>English (Advanced)</li>
-                  </ul>
+                  <Grid item xs={12} className={classes.skillcontentColumn}>
+                    <ul
+                      style={{
+                        listStyleType: "none",
+                        paddingInlineStart: "0px",
+                        minHeight: "120px",
+                      }}
+                    >
+                      <li>Finnish (Native)</li>
+                      <li>English (Advanced)</li>
+                    </ul>
+                  </Grid>
                   <div className={classes.dividerEllipse} />
                 </Grid>
-                
               </Grid>
             </Fade>
           </Grid>

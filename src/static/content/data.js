@@ -5,25 +5,29 @@ import portfoliokuva from '../media/portfoliokuva.png'
 export default {
 
     chip: [
-        {   
-            id: 1,
-            color: '#f50',
-            label: 'Java',
-        },
+
         {
             id: 2,
             color: '#c4b221',
             label: 'Javascript',
         },
-        {
-            id: 3,
-            color: '#F05032',
-            label: 'Git',
+        {   
+            id: 1,
+            color: '#f50',
+            label: 'Java',
         },
+
+
+
         {
             id: 4,
             color: '#61DAFB',
             label: 'React',
+        },
+        {
+            id: 7,
+            color: '#3E4848',
+            label: 'HTML | CSS'
         },
         {
             id: 5,
@@ -36,10 +40,11 @@ export default {
             label: 'PostgreSQL',
         },
         {
-            id: 7,
-            color: '#3E4848',
-            label: 'HTML | CSS'
-        }
+            id: 3,
+            color: '#F05032',
+            label: 'Git',
+        },
+
     ],
 
     link: [
