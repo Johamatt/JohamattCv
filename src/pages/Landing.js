@@ -208,7 +208,7 @@ export default function Header() {
                     variant="text"
                     color="primary"
                     target="_blank"
-                    href="#"
+                    href="https://www.linkedin.com/in/johannes-mattila-17972a209/"
                   >
                     <FaLinkedin className={classes.icon}   />
                   </Button>
