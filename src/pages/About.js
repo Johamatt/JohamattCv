@@ -150,17 +150,7 @@ export default function About() {
                         <div className={classes.hrEllipse} />
                       </Grid>
                     </Grid>
-                    <Grid item xs={12} className={classes.education}>
-                      <Grid item xs={12} style={{ paddingTop: "0.5rem" }}>
-                        <Chip size="small" label="2014 - 2017" disabled />
-                        <h3>Keskuspuiston ammattiopisto</h3>
-                        <p style={{ paddingBottom: "1rem" }}>
-                          Business undergraduate Diploma in Business
-                          Administration
-                        </p>
-                        <div className={classes.hrEllipse} />
-                      </Grid>
-                    </Grid>
+                    
                   </Grid>
                 </Grid>
               </Fade>
