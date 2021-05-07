@@ -1,6 +1,7 @@
 import ptkuva1 from '../media/personaltrainerkuva2.png';
 import todolistgif from '../media/todoGif2.gif';
 import portfoliokuva from '../media/portfoliokuva.png'
+import acebookkuva from "../media/acebook.png";
 
 export default {
 
@@ -90,8 +91,17 @@ export default {
             github: 'https://github.com/Johamatt/PersonalTrainer',
             livedemo: 'https://heroku-personaltrainer.herokuapp.com/',
         },
+        {
+            index: 3,
+            title: 'Acebook',
+            label: 'Social media app. Registered users can add profile picture, post comments on wall of user, send friend requests. Java Spring Boot, thymeleaf -stack. Test users (username/password): user/user, user1/user, admin/admin',
+            imageUrl: acebookkuva,
+            time: 1500,
+            github: 'https://github.com/Johamatt/Acebook',
+            livedemo: 'https://acebook-jm.herokuapp.com/home',
+        },
         {   
-            index:3,
+            index:4,
             title: 'Personal portfolio, in progress (This website)',
             label: 'Responsive Personal portfolio/CV front-end app. React.js, Material-UI and other component libaries. ',
             imageUrl: portfoliokuva,
@@ -99,5 +109,6 @@ export default {
             github: 'https://github.com/Johamatt/JohamattCv',
             livedemo: '#',
         },
+
     ]
 }
