@@ -208,7 +208,7 @@ export default function Skills() {
                       }}
                     >
                       <li>Finnish (Native)</li>
-                      <li>English (Advanced)</li>
+                      <li>English (Intermediate)</li>
                     </ul>
                   </Grid>
                   <div className={classes.dividerEllipse} />
