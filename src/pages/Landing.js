@@ -214,8 +214,10 @@ export default function Header() {
                   </Button>
                 </Grid>
               </Grid>
-
+    
+          
               {/* RIGHT COL*/}
+          /*
               <Grid item xs={5} className={classes.rightCol}>
                 <Grid>
                   <MoonSwitch />
@@ -223,6 +225,7 @@ export default function Header() {
               </Grid>
             </Grid>
           </Collapse>
+          */
 
           {/*BOTTOM BUTTON */}
           <Grid item xs={12} className={classes.bottomGrid}>
