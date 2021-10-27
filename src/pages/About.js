@@ -173,8 +173,7 @@ export default function About() {
                   <p>
                     Quick and continuous learner who is proficient 
                     to plan and execute a variety of technology in the 
-                    Web Application Development. Coding enthusiast since 2017, 
-                    currently a full-time information technology student.
+                    Web Application Development. Currently a full-time information technology student.
                   </p>
 
                   <Grid item xs={12} className={classes.rightcolData}>
@@ -184,8 +183,6 @@ export default function About() {
                       <IoMailSharp></IoMailSharp>
                       <span> Johamatt94@gmail.com</span>
                       <br />
-                      <IoCallSharp></IoCallSharp>
-                      <span> 0452391139</span>
                     </Grid>
 
                   {/* <Slide direction="left" in={checkedSlider} timeout={750}>
