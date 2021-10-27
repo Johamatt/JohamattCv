@@ -223,9 +223,10 @@ export default function Header() {
                   <MoonSwitch />
                 </Grid>
               </Grid>
+           */
             </Grid>
           </Collapse>
-          */
+          
 
           {/*BOTTOM BUTTON */}
           <Grid item xs={12} className={classes.bottomGrid}>
