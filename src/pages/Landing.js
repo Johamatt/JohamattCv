@@ -218,11 +218,11 @@ export default function Header() {
           
               {/* RIGHT COL*/}
           /*
-              <Grid item xs={5} className={classes.rightCol}>
+              {/* <Grid item xs={5} className={classes.rightCol}>
                 <Grid>
                   <MoonSwitch />
                 </Grid>
-              </Grid>
+              </Grid> */}
            */
             </Grid>
           </Collapse>

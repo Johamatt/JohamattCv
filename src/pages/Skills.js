@@ -115,7 +115,7 @@ const useStyles = makeStyles((theme) => ({
 const chips = data.chip.map((chip) => (
   <Chip
     key={chip.id}
-    style={{ backgroundColor: `${chip.color}`,width: '6rem' }}
+    style={{ backgroundColor: `${chip.color}`,width: '7rem' }}
     label={chip.label}
     color="primary"
     size="medium"

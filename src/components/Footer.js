@@ -34,7 +34,7 @@ export default function Footer() {
   return (
     <Grid item xs={12} className={classes.root}>
       <Grid item xs={4} className={classes.leftGrid}>
-        <p>©2021 <span>Johannes Mattila</span></p>
+        <p>©2022 <span>Johannes Mattila</span></p>
       </Grid>
     </Grid>
   );

@@ -17,18 +17,17 @@ export default {
             color: '#f50',
             label: 'Java',
         },
-
+        {
+            id: 3,
+            color: '#F05032',
+            label: 'Git',
+        },
 
 
         {
             id: 4,
             color: '#61DAFB',
             label: 'React',
-        },
-        {
-            id: 7,
-            color: '#3E4848',
-            label: 'HTML | CSS'
         },
         {
             id: 5,
@@ -41,10 +40,17 @@ export default {
             label: 'PostgreSQL',
         },
         {
-            id: 3,
-            color: '#F05032',
-            label: 'Git',
+            id: 7,
+            color: '#3E4848',
+            label: 'HTML | CSS'
         },
+        {
+            id: 8,
+            color: '#57c4e1',
+            label: 'React Native'
+        }
+
+
 
     ],
 
