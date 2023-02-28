@@ -1,13 +1,24 @@
 import { AppBar, IconButton, Toolbar, Button } from "@material-ui/core";
 import React from "react";
-import { makeStyles} from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import MenuIcon from "@material-ui/icons/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 import Menu from "@material-ui/core/Menu";
-import {Link} from "react-scroll";
-
+import { Link } from "react-scroll";
+import { useTheme } from "@material-ui/core/styles";
 import data from "../static/content/data";
+import { ThemeProvider } from "@material-ui/core/styles";
+import { createTheme } from "@material-ui/core/styles";
+import amber from "@material-ui/core/colors/amber";
+
+const themeColor = createTheme({
+  palette: {
+    primary: {
+      main: amber[300],
+    },
+  },
+});
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -27,24 +38,23 @@ const useStyles = makeStyles((theme) => ({
   menuLinks: {
     marginRight: theme.spacing(1),
     "& a": {
-      borderBottom:  "1px solid red",
+      borderBottom: "1px solid red",
     },
     [theme.breakpoints.down("xs")]: {
       display: "none",
     },
-
   },
 
   dot: {
-      height: '8px',
-      width: '8px',
-      backgroundColor: 'red',
-      borderRadius: '50%',
-      display: 'inline-block',
-  }
+    height: "8px",
+    width: "8px",
+    backgroundColor: "red",
+    borderRadius: "50%",
+    display: "inline-block",
+  },
 }));
 export default function Navbar(props) {
-  const classes = useStyles();
+  const styles = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
 
@@ -74,64 +84,56 @@ export default function Navbar(props) {
   ));
 
   const linksFullWidth = data.link.map((link) => (
-    <Button color="inherit" key={link.id} className={classes.menuLinks} >
-      <Link 
-      to={link.to}
-      spy={true}
-      smooth={true}  
-      offset={-100}
-      duration={500}
-      >
-
-        
-        
-        {link.label}</Link>
+    <Button color="inherit" key={link.id} className={styles.menuLinks}>
+      <Link to={link.to} spy={true} smooth={true} offset={-100} duration={500}>
+        {link.label}
+      </Link>
     </Button>
   ));
 
   return (
-    
-    <nav className={classes.root}>
-      <AppBar color="#fff">
-        <Toolbar>
-          <Typography variant="h6" className={classes.title}>
-            Johannes Mattila <div className={classes.dot}></div>
-          </Typography>
-          <div>
-            <IconButton
-              edge="start"
-              className={classes.menuButton}
-              color="inherit"
-              aria-label="menu"
-              onClick={handleMenu}
-            >
-              <MenuIcon />
-            </IconButton>
+    <ThemeProvider theme={themeColor}>
+      <nav className={styles.root}>
+        <AppBar color={themeColor.primary} position="relative">
+          <Toolbar>
+            <Typography variant="h6" className={styles.title}>
+              Johannes Mattila <div className={styles.dot}></div>
+            </Typography>
+            <div>
+              <IconButton
+                edge="start"
+                className={styles.menuButton}
+                color="inherit"
+                aria-label="menu"
+                onClick={handleMenu}
+              >
+                <MenuIcon />
+              </IconButton>
 
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorEl}
-              anchorOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              open={open}
-              onClose={() => handleClose()} // ?
-            >
-            {links}
-            </Menu>
-          </div>
-          
-          {linksFullWidth}
-          <div className={classes.menuLinks}>
-          </div>
-        </Toolbar>
-      </AppBar>
-    </nav>
+              <Menu
+                id="menu-appbar"
+                anchorEl={anchorEl}
+                anchorOrigin={{
+                  vertical: "top",
+                  horizontal: "right",
+                }}
+                keepMounted
+                transformOrigin={{
+                  vertical: "top",
+                  horizontal: "right",
+                }}
+                open={open}
+                onClose={() => handleClose()} // ?
+              >
+                {links}
+              </Menu>
+            </div>
+
+            {linksFullWidth}
+            <div className={styles.menuLinks}></div>
+          </Toolbar>
+        </AppBar>
+      </nav>
+    </ThemeProvider>
   );
 }

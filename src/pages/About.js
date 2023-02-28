@@ -1,22 +1,17 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
-import { IoPerson, IoMailSharp, IoCallSharp } from "react-icons/io5";
+import { IoPerson, IoMailSharp } from "react-icons/io5";
 import useWindowPosition from "../hook/useWindowsPosition";
 import Container from "@material-ui/core/Container";
 import { Fade } from "@material-ui/core";
-import Button from "@material-ui/core/Button";
-// import ChevronRightIcon from "@material-ui/icons/ChevronRight";
-import Slide from "@material-ui/core/Slide";
-import { FaUniversity, FaClipboardList, FaSmile } from "react-icons/fa";
+import { FaUniversity, FaClipboardList } from "react-icons/fa";
 import Chip from "@material-ui/core/Chip";
-import Popper from '@material-ui/core/Popper';
 
 const useStyles = makeStyles((theme) => ({
-
   root: {
     flexGrow: 1,
-    padding: "100px 0",
+    padding: "50px 0",
     backgroundColor: "var(--white)",
   },
 
@@ -77,6 +72,7 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("xs")]: {
       flexDirection: "column",
       maxWidth: "100%",
+      textAlign: "center",
     },
   },
 
@@ -87,6 +83,7 @@ const useStyles = makeStyles((theme) => ({
   },
   rightcolData: {
     padding: "0.5rem 1rem",
+    [theme.breakpoints.down("xs")]: {},
   },
 
   leftcol: {
@@ -106,7 +103,7 @@ export default function About() {
   const [anchorEl, setAnchorEl] = React.useState(null);
 
   const open = Boolean(anchorEl);
-  const id = open ? 'simple-popper' : undefined;
+  const id = open ? "simple-popper" : undefined;
 
   const handleClick = (event) => {
     setAnchorEl(anchorEl ? null : event.currentTarget);
@@ -150,7 +147,6 @@ export default function About() {
                         <div className={classes.hrEllipse} />
                       </Grid>
                     </Grid>
-                    
                   </Grid>
                 </Grid>
               </Fade>
@@ -171,19 +167,20 @@ export default function About() {
                   </Grid>
 
                   <p>
-                    Quick and continuous learner who is proficient 
-                    to plan and execute a variety of technology in the 
-                    Web Application Development. Currently a full-time information technology student.
+                    Quick and continuous learner who is proficient to plan and
+                    execute a variety of technology in the Web Application
+                    Development. Currently a full-time information technology
+                    student.
                   </p>
 
                   <Grid item xs={12} className={classes.rightcolData}>
-                      <IoPerson></IoPerson>
-                      <span> Johannes Mattila</span>
-                      <br />
-                      <IoMailSharp></IoMailSharp>
-                      <span> Johamatt94@gmail.com</span>
-                      <br />
-                    </Grid>
+                    <IoPerson></IoPerson>
+                    <span> Johannes Mattila</span>
+                    <br />
+                    <IoMailSharp></IoMailSharp>
+                    <span> Johamatt94@gmail.com</span>
+                    <br />
+                  </Grid>
 
                   {/* <Slide direction="left" in={checkedSlider} timeout={750}>
                     <Button

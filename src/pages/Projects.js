@@ -10,7 +10,7 @@ import { RiLiveLine } from "react-icons/ri";
 
 import { Fade } from "@material-ui/core";
 import useWindowPosition from "../hook/useWindowsPosition";
-import data from '../static/content/data';
+import data from "../static/content/data";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
     textDecoration: "none",
     "&:after": {
       background: "#fff",
-      content: "'Demos | Github'",
+      content: "'Demos'",
       position: "absolute",
       bottom: "-8px",
       left: "50%",
@@ -93,9 +93,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Projects(theme) {
-
   const checked = useWindowPosition("about-page");
-
 
   const arrowStyles = {
     opacity: 0.9,
@@ -133,13 +131,13 @@ export default function Projects(theme) {
     },
   }))(Button);
 
-  const classes = useStyles();
+  const styles = useStyles();
   const createCarouselItemImage1 = data.project.map((project) => (
     <div key={project.index}>
-      <img src={project.imageUrl} alt="project"/>
-      <div className={classes.legend}>
+      <img src={project.imageUrl} alt="project" />
+      <div className={styles.legend}>
         <h3 style={{ marginTop: "0" }}>{project.title}</h3>
-        <p className={classes.label}>{project.label}</p>
+        <p className={styles.label}>{project.label}</p>
         <ColorButton variant="contained">
           <a
             href={project.github}
@@ -149,14 +147,14 @@ export default function Projects(theme) {
             style={{ textDecoration: "none", color: "var(--white)" }}
           >
             Github &nbsp;
-            <FaGithub className={classes.linkIcon} />
+            <FaGithub className={styles.linkIcon} />
           </a>
         </ColorButton>
 
         {project.livedemo === "#" ? (
-          <div></div>
+          <div />
         ) : (
-          <ColorButton variant="contained" >
+          <ColorButton variant="contained">
             <a
               href={project.livedemo}
               alt="icon"
@@ -165,7 +163,7 @@ export default function Projects(theme) {
               style={{ textDecoration: "none", color: "var(--white)" }}
             >
               Live Demo &nbsp;
-              <RiLiveLine className={classes.linkIcon} />
+              <RiLiveLine className={styles.linkIcon} />
             </a>
           </ColorButton>
         )}
@@ -174,71 +172,76 @@ export default function Projects(theme) {
   ));
 
   return (
-    <div className={classes.root} id="projects-page">
+    <div className={styles.root} id="projects-page">
       <Grid>
-      <Fade in={checked} {...(checked ? { timeout: 1000 } : {})}>
-        <Container maxWidth="md">
-          <Grid item xs={12}>
-            <h1 className={classes.title}>Projects</h1>
-          </Grid>
-          <Grid container spacing={3}>
-            <Carousel
-              statusFormatter={(current, total) =>
-                `Current slide: ${current} / Total: ${total}`
-              }
-              renderArrowPrev={(onClickHandler, hasPrev, label) =>
-                hasPrev && (
-                  <button
-                    type="button"
-                    onClick={onClickHandler}
-                    title={label}
-                    style={{ ...arrowStyles, left: 15 }}
-                  >
-                    <FaArrowLeft style={{ fontSize: "1rem", color: "var(--white)" }} />
-                  </button>
-                )
-              }
-              renderArrowNext={(onClickHandler, hasNext, label) =>
-                hasNext && (
-                  <button
-                    type="button"
-                    onClick={onClickHandler}
-                    title={label}
-                    style={{ ...arrowStyles, right: 15 }}
-                  >
-                    <FaArrowRight style={{ fontSize: "1rem", color: "var(--white)" }} />
-                  </button>
-                )
-              }
-              renderIndicator={(onClickHandler, isSelected, index, label) => {
-                if (isSelected) {
+        <Fade in={checked} {...(checked ? { timeout: 1000 } : {})}>
+          <Container maxWidth="md">
+            <Grid item xs={12}>
+              <h1 className={styles.title}>Projects</h1>
+            </Grid>
+            <Grid container spacing={3}>
+              <Carousel
+                statusFormatter={(current, total) =>
+                  `Current slide: ${current} / Total: ${total}`
+                }
+         
+                renderArrowPrev={(onClickHandler, hasPrev, label) =>
+                  hasPrev && (
+                    <button
+                      type="button"
+                      onClick={onClickHandler}
+                      title={label}
+                      style={{ ...arrowStyles, left: 15 }}
+                    >
+                      <FaArrowLeft
+                        style={{ fontSize: "1rem", color: "var(--white)" }}
+                      />
+                    </button>
+                  )
+                }
+                renderArrowNext={(onClickHandler, hasNext, label) =>
+                  hasNext && (
+                    <button
+                      type="button"
+                      onClick={onClickHandler}
+                      title={label}
+                      style={{ ...arrowStyles, right: 15 }}
+                    >
+                      <FaArrowRight
+                        style={{ fontSize: "1rem", color: "var(--white)" }}
+                      />
+                    </button>
+                  )
+                }
+                renderIndicator={(onClickHandler, isSelected, index, label) => {
+                  if (isSelected) {
+                    return (
+                      <li
+                        style={{ ...indicatorStyles, background: "#000" }}
+                        aria-label={`Selected: ${label} ${index + 1}`}
+                        title={`Selected: ${label} ${index + 1}`}
+                      />
+                    );
+                  }
                   return (
                     <li
-                      style={{ ...indicatorStyles, background: "#000" }}
-                      aria-label={`Selected: ${label} ${index + 1}`}
-                      title={`Selected: ${label} ${index + 1}`}
+                      style={indicatorStyles}
+                      onClick={onClickHandler}
+                      onKeyDown={onClickHandler}
+                      value={index}
+                      key={index}
+                      role="button"
+                      tabIndex={0}
+                      title={`${label} ${index + 1}`}
+                      aria-label={`${label} ${index + 1}`}
                     />
                   );
-                }
-                return (
-                  <li
-                    style={indicatorStyles}
-                    onClick={onClickHandler}
-                    onKeyDown={onClickHandler}
-                    value={index}
-                    key={index}
-                    role="button"
-                    tabIndex={0}
-                    title={`${label} ${index + 1}`}
-                    aria-label={`${label} ${index + 1}`}
-                  />
-                );
-              }}
-            >
-              {createCarouselItemImage1}
-            </Carousel>
-          </Grid>
-        </Container>
+                }}
+              >
+                {createCarouselItemImage1}
+              </Carousel>
+            </Grid>
+          </Container>
         </Fade>
       </Grid>
     </div>
