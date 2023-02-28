@@ -78,7 +78,7 @@ export default {
       index: 5,
       title: "Event App",
       label:
-        "App for finding nearby events. Expo, Redux. Initialized with AWS Amplify + custom cloud-functions & IAM policies & roles. (in Progress)",
+        "An app for finding nearby events using Expo and Redux. It was initialized with AWS Amplify. Also contains custom cloud functions, IAM policies, and roles. (In progress)",
       imageUrl: eventApp,
       time: 1500,
       github: "https://github.com/Johamatt/EventMap",

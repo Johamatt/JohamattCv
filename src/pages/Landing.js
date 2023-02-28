@@ -9,8 +9,10 @@ import {
 } from "@material-ui/core";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import { Link as Scroll } from "react-scroll";
-import Typical from "react-typical";
+
 import video from "../static/media/Black-headervid.mp4";
+
+import { TypeAnimation } from "react-type-animation";
 
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
@@ -81,15 +83,6 @@ const useStyles = makeStyles((theme) => ({
       "radial-gradient(ellipse at center, #db2c2c 0%, rgba(255, 255, 255, 0) 70%)",
     width: "100%",
     height: "1.5px",
-  },
-
-  typical: {
-    display: "inline",
-    color: "var(--crimson)",
-    [theme.breakpoints.down("xs")]: {
-      display: "block",
-      marginTop: "0",
-    },
   },
 
   icon: {
@@ -172,11 +165,12 @@ export default function Header() {
             <Grid item xs={6} className={styles.leftCol}>
               <h2 className={styles.h2}>
                 Welcome to my portfolio, <br /> I'm{" "}
-                <Typical
-                  className={styles.typical}
-                  steps={["Coder", 1000, "Student", 1000]}
-                  loop={Infinity}
-                  wrapper="p"
+                <TypeAnimation
+                  sequence={["Coder", 1000, "Student", 1000]}
+                  wrapper="div"
+                  cursor={true}
+                  repeat={Infinity}
+                  style={{ fontSize: "2em", color: "red" }}
                 />
               </h2>
               <div className={styles.dividerEllipse} />

@@ -98,19 +98,10 @@ const useStyles = makeStyles((theme) => ({
 export default function About() {
   const classes = useStyles();
   const checked = useWindowPosition("header");
-  const [checkedSlider, setCheckedSlider] = React.useState(true);
-
   const [anchorEl, setAnchorEl] = React.useState(null);
 
   const open = Boolean(anchorEl);
   const id = open ? "simple-popper" : undefined;
-
-  const handleClick = (event) => {
-    setAnchorEl(anchorEl ? null : event.currentTarget);
-  };
-  const handleChange = () => {
-    setCheckedSlider((prev) => !prev);
-  };
 
   return (
     <div className={classes.root} id="about-page">

@@ -6,7 +6,7 @@ import MenuIcon from "@material-ui/icons/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 import Menu from "@material-ui/core/Menu";
 import { Link } from "react-scroll";
-import { useTheme } from "@material-ui/core/styles";
+
 import data from "../static/content/data";
 import { ThemeProvider } from "@material-ui/core/styles";
 import { createTheme } from "@material-ui/core/styles";
@@ -94,6 +94,7 @@ export default function Navbar(props) {
   return (
     <ThemeProvider theme={themeColor}>
       <nav className={styles.root}>
+        {/* Appbar color must be changed through themeprovider*/}
         <AppBar color={themeColor.primary} position="relative">
           <Toolbar>
             <Typography variant="h6" className={styles.title}>

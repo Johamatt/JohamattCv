@@ -5,7 +5,6 @@ import About from "./pages/About";
 import Education from "./pages/Skills";
 import Projects from "./pages/Projects";
 import Footer from "./components/Footer";
-import Container from "@material-ui/core/Container";
 export default function App() {
   return (
     <div>
